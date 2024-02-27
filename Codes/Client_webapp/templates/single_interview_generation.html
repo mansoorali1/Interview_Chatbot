@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Single-interview</title>
+</head>
+<body>
+    <h1>Generate a single interview</h1><br>
+    <form method="POST" action="/single_interview_generation">
+        Statistics <input type="checkbox" value="Statistics" name="topic"><br>
+        Linear Regression <input type="checkbox" value="Linear Regression" name="topic"><br>
+        Logistic Regression <input type="checkbox" value="Logistic Regression" name="topic"><br>
+        KNN <input type="checkbox" value="KNN" name="topic"><br>
+        SVM <input type="checkbox" value="SVM" name="topic"><br>
+        KMeans <input type="checkbox" value="KMeans" name="topic"><br>
+        Decision Tree <input type="checkbox" value="Decision Tree" name="topic"><br>
+        Naive Bayes <input type="checkbox" value="Naive Bayes" name="topic">  <br><br>
+
+        <label for="email">Enter the interviewee email:</label>
+        <input type="email" id="email" name="email"><br><br>
+
+        <label for="deadline">Deadline(DD-MMM-YYYY):</label>
+        <input type="text" id="deadline" name="deadline"><br><br>
+
+        <input type='submit', value="Send email"><br>
+    </form>    
+    <a href ="{{url_for('dashboard')}}">Go back to interview dashboard</a><br>
+    <a href ="{{url_for('logout')}}">Logout</a><br>
+
+</body>
+</html>

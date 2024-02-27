@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multiple-interviews</title>
+</head>
+<body>
+    <h1>Generate multiple interviews </h1><br>
+
+    <a href ="https://drive.google.com/uc?id=1szk7VZUdLvs9nxfNaXJ7kWUxMqt8AiMy"> Download the template here</a>
+    <form method="POST" enctype="multipart/form-data" action="/multiple_interview_generation" enctype=multipart/form-data>
+        
+        <label for="deadline">Deadline(DD-MMM-YYYY):</label>
+        <input type="text" id="deadline" name="deadline"><br><br>    
+    
+        <input type=file name=file><input type=submit value=Upload>
+    
+    </form>
+    <a href ="{{url_for('dashboard')}}">Go back to interview dashboard</a><br>
+    <a href ="{{url_for('logout')}}">Logout</a><br>
+
+</body>
+</html>

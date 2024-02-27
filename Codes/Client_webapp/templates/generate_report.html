@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        table, th, td {
+          border: 1px solid black;
+        }
+    </style>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Report</title>
+</head>
+<body>
+    <h1> Report of people who have already taken the interview</h1><br>
+    <table>
+        <tr>
+          <th>  Interview date  </th>
+          <th>  User Login  </th>
+          <th>  Topics  </th>
+          <th>  Percentage (%) </th>
+          <th>  Passed </th>
+          <th>  Score  </th>          
+          <th>  Total  </th>
+        </tr>
+        {% for item in data %}
+        <tr>
+            <td>{{item.saved_date}}</td>
+            <td>{{item.userid}}</td>
+            <td>{{item.Category}}</td>
+            <td>{{item.percentage}}</td>
+            <td>{{item.passed}}</td>
+            <td>{{item.Scores_Obtained}}</td>
+            <td>{{item.MaxMarks}}</td>
+        </tr>                        
+        {% endfor %}
+    </table><br>
+    <a href ="{{url_for('dashboard')}}">Dashboard</a><br>
+    <a href ="{{url_for('logout')}}">Log Out</a>
+</body>
+</html>
