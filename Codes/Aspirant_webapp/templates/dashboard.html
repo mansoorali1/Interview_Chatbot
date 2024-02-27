@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block title %} Dashboard {% endblock title %}
+
+{% block body %}
+    <h2 class="text-center">Please read these instructions. Your interview will begin after 2 minutes</h2>
+
+    <!-- Interview instructions -->
+    <div class="mx-auto" style="width: 200px;">
+    <a href ="{{url_for('interview')}}" type="button" class="btn btn-outline-primary my-1">Begin interview</a><br>    
+    <a href ="{{url_for('logout')}}" type="button" class="btn btn-outline-primary my-1 mx-4">Logout</a><br>
+    </div>
+{% endblock body %}

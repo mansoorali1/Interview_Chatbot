@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+{% block title %} Interview -In progress {% endblock title %}
+
+{% block body %}
+
+
+
+<h2 class="text-center">Take the interview here</h2>
+<h2 class="text-center">Welcome! {{ uname }}</h2><br>
+<h5>Topics you will be tested in: {{ topics }}</h5>
+<h5>Note:You need to save your answers by clicking on save button.</h5>
+<h5>Click on submit button only when you want to finish the interview.</h5>
+
+<div style="text-align:left; font-size:15px; color:rgb(9, 12, 185); font-weight:bold">
+<h7>Time Left</h7><div id="countdown"></div>
+</div>
+
+<form method="POST" action="/answer2db">
+
+    {% for item in data %}
+        <h3 class="position-relative top-0 start-50 mx-50 my-50">{{item.topic}}</h3>
+            {% for mykey in item %}
+            <div class="container my-3">
+                {% if mykey != 'topic' %}
+
+                    <div class="mb-3">
+                        <span class="quesclass">
+                            {{item[mykey][0]}}
+                        </span>
+                        <span style="float: right;" class="marks">Marks: {{item[mykey][2]}}</span>
+                        <p> {{item[mykey][1]}}</p>
+                    </div>
+                    <div class="mb-3">
+                        
+                        <textarea class="answerclass form-control" placeholder="Write Your Answer Here" id="floatingTextarea2"
+                            style="height: 100px"></textarea> 
+                    </div>
+                    
+                    <button type="button" class="btn btn-outline-primary" onclick='sendData("{{mykey}}")' >SAVE</button>
+                {% endif %}
+            </div>
+
+            {% endfor %}
+    {% endfor %}
+
+</form>
+<a href="{{url_for('successt')}}" type="button" id="btnSubmitid" class="btn btn-outline-success btn-sm mx-1">submit</a>
+
+<a href="{{url_for('successt')}}" type="button" id="btnleaveid" class="btn btn-outline-danger btn-sm mx-1 my-1">Leave the interview</a>
+
+<script src="../static/answer.js"></script>
+
+{% endblock body %}

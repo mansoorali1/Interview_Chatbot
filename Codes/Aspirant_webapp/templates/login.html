@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block title %} Login {% endblock title %}
+
+{% block body %}
+<h1 class="text-center">Login Page</h1>
+
+<form  class="text-center" method="POST" action="">
+    {{ form.hidden_tag() }}
+    <h7>Username</h7><br>
+    {{form.username}}<br>
+    <h8>Password</h8><br>
+    {{form.password}}<br>
+    {{form.submit}}
+</form>
+
+
+
+<a href="{{url_for('register')}}" type = "button-center" ><p style="text-align:center">Don't have an account? Sign up here</p></a>
+
+{% endblock body %}

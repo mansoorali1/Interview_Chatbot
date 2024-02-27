@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% block title %} Success {% endblock title %}
+
+{% block body %}
+    <h1>Success</h1>
+    Your responses have been captured<br>
+    <a href ="{{url_for('logout')}}">Logout</a>
+ 
+{% endblock body %}
